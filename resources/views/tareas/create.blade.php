@@ -11,7 +11,7 @@
                 @include('partials.errors')
 
                 <div class="card-body">
-                <form method='POST' action="{{route ('tareas.store')}}">
+                <form method='POST' action="/tareas">
                 @csrf
                 <div class="form-group">
                     <label for="nombre">Nombre</label>

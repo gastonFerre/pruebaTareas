@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header">Tareas</div>
                 <div class="card-body">
-                    <a href="{{ route('tareas.create')}}" class="btn btn-success btn-block">Añadir una nueva tarea</a>
+                    <a href="/tareas/create" class="btn btn-success btn-block">Añadir una nueva tarea</a>
                     <table class="table">
                         @if($tareas->count())
                         <thead>
@@ -24,9 +24,9 @@
                             <tr>
                                 <td>{{$tarea->id}}</td>
                             <td width='40%'>{{$tarea->nombre}}</td>
-                            <td><a href="{{ route('tareas.show', ['id'=>$tarea->id])}}" class="btn btn-dark">Ir a la tarea</a></td>
+                            <td><a href="/tareas/{{$tarea->id}}" class="btn btn-dark">Ir a la tarea</a></td>
                             <td>
-                            <form method="POST" action="{{ route ('tareas.destroy',['id'=>$tarea->id])}}">
+                            <form method="POST" action="/tareas/{{$tarea->id}}">
                             @method("DELETE")
                             @csrf
                             <button type="submit" class="btn btn-danger">Eliminar tarea</button>

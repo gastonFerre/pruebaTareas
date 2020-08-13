@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tareas extends Model
 {
-    protected $guarded = ['id'];
+    protected $fillable = ['id'];
 
     protected static function boot() {
         parent::boot();
